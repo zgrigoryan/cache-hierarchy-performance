@@ -40,7 +40,7 @@ int main() {
             auto start = std::chrono::high_resolution_clock::now();
 
             for (int i = 0; i < NUM_ACCESSES; i++) {
-                int index = (i * stride) % ARRAY_SIZE;
+                int index = (static_cast<long long>(i) * stride) % ARRAY_SIZE;
                 array[index] += 1;
             }
 
